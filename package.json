@@ -13,7 +13,10 @@
   },
   "dependencies": {
     "@koa/router": "^10.1.1",
-    "koa": "^2.13.4"
+    "@prisma/client": "^3.14.0",
+    "koa": "^2.13.4",
+    "mongodb": "^4.6.0",
+    "prisma": "^3.14.0"
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",

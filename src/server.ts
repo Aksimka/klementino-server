@@ -1,8 +1,12 @@
-const Koa = require('koa')
-const appRouter = require('./router/index')
+import Koa from 'koa'
+import { PrismaClient } from '@prisma/client'
+import appRouter from './router/index'
 
-const app = new Koa()
+export const prismaConnection = new PrismaClient()
 
-app.use(appRouter.routes())
+prismaConnection.$connect().then(() => {
+  const app = new Koa()
 
-app.listen(3000)
+  app.use(appRouter.routes())
+  app.listen(3000)
+})
